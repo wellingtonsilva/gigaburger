@@ -20,10 +20,10 @@ export const Navbar = () => {
         <div onClick={handleMenuMobile} className='cursor-pointer'>
           <AiOutlineMenu size={30} />
         </div>
-          <h1 className='text-2xl sm:text-3xl lg:text-4xl px-2'>Giga <span className='font-bold'>Burger</span></h1>
+          <h1 className='text-2xl sm:text-3xl lg:text-4xl px-2 font-bold'>Giga <span className=' text-orange-500'>Burger</span></h1>
           <div className='hidden lg:flex items-center bg-gray-200 rounded-full p-1 text-[14px]'>
             <p className='bg-black text-white rounded-full p-2'>Entrega</p>
-            <p className='p-2'>Escolher</p>
+            <p className='p-2'>Retirada</p>
           </div>
         </div>
         {/* busca */}
@@ -38,11 +38,11 @@ export const Navbar = () => {
           <p>Carrinho</p>
         </button>
 
-        {/* menu mobile */}
+        
         {/* overlay */}
-        {nav && <div className='bg-black/80 fixed w-full h-screen z-10 top-0 left-0'></div>}
+        {nav && <div onClick={handleMenuMobile} className='bg-black/80 fixed w-full h-screen z-10 top-0 left-0 duration-200'></div>}
           
-          {/* menu lateral */}
+          {/* menu mobile */}
           <div className={nav ? 'fixed top-0 left-0 w-[300px] h-screen bg-white z-10 duration-300' : 'fixed top-0 left-[-100%] w-[300px] h-screen bg-white z-10 duration-300' }>
             <AiOutlineClose onClick={handleMenuMobile} size={25} className='absolute right-4 top-4 cursor-pointer' />
             <h2 className='text-2xl p-4'>Giga <span className='font-bold'>Burger</span></h2>
