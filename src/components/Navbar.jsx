@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import {AiOutlineClose, AiOutlineMenu, AiOutlineSearch, AiFillTag} from 'react-icons/ai'
-import {BsFillCartFill, BsFillSaveFill} from 'react-icons/bs'
+import {BsFillCartFill} from 'react-icons/bs'
 import {TbTruckDelivery} from 'react-icons/tb'
-import {FaUserFriends, FaWallet} from 'react-icons/fa'
-import {MdFavorite, MdHelp} from 'react-icons/md'
+import {FaUserFriends, FaRegThumbsUp } from 'react-icons/fa'
+import {MdFavorite} from 'react-icons/md'
 
 
 export const Navbar = () => {
@@ -56,20 +56,13 @@ export const Navbar = () => {
                   <MdFavorite className='mr-4' size={25}  />
                   <span>Favoritos</span>
                 </li>
-                <li className='text-xl py-4 flex items-center'>
-                  <FaWallet className='mr-4' size={25}  />
-                  <span>Carteira</span>
-                </li>
-                <li className='text-xl py-4 flex items-center'>
-                  <MdHelp className='mr-4' size={25}  />
-                  <span>Ajuda</span>
-                </li>
+
                 <li className='text-xl py-4 flex items-center'>
                   <AiFillTag className='mr-4' size={25}  />
                   <span>Promoções</span>
                 </li>
                 <li className='text-xl py-4 flex items-center'>
-                  <BsFillSaveFill className='mr-4' size={25}  />
+                <FaRegThumbsUp className='mr-4' size={25} />
                   <span>Mais vendidos</span>
                 </li>
                 <li className='text-xl py-4 flex items-center'>
