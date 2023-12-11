@@ -1,12 +1,12 @@
 import {useState} from 'react'
 import {data} from './../data/data.jsx'
-
+import { FilterCategory } from './FilterCategory.jsx'
 export const Menu = () => {
   const [foods, setFoods] = useState(data)
   const filterFoods = (category) => {
-    setFoods(data.filter(food =>  food.category === category))
-    
-  }
+    setFoods(category === 'all' ? data : data.filter(food => food.category === category));
+  };
+  
   return (
     <div className='max-w-[1640px] mx-auto px-4 py-1 lg:py-12'>
       <h3 className='text-orange-600 font-bold text-4xl text-center mb-3 sm:mb-2'>Nosso Cardápio</h3>
@@ -15,13 +15,8 @@ export const Menu = () => {
         {/* filtro tipo */}
         <div>
          
-            <p className='font-bold text-gray-700 mb-3 sm:mb-2'>Filtros por Categorias</p>
             <div className='flex justify-between flex-wrap'>
-              <button onClick={() => setFoods(data)} className='m-1 p-2 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white active:text-white active:bg-orange-600'>Todos</button>
-              <button onClick={() => filterFoods('burger')} className='m-1 border-orange-600 text-orange-600 hover:'>Burger</button>
-              <button onClick={() => filterFoods('pizza')} className='m-1 border-orange-600 text-orange-600 hover:'>Pizza</button>
-              <button onClick={() => filterFoods('salad')} className='m-1 border-orange-600 text-orange-600 hover:'>Salada</button>
-              <button onClick={() => filterFoods('chicken')} className='m-1 border-orange-600 text-orange-600 hover:'>Frango</button>
+            <FilterCategory filterFoods={filterFoods} />
             </div>
           
         </div>
